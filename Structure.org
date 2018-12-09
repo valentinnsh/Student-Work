@@ -1,0 +1,5 @@
+* [2018-12-10 Пн]  create Automata2/
+  DEADLINE: <2018-12-13 Чт>
+** TODO Write task at c++
+** TODO TeX it 
+
