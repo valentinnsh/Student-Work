@@ -23,7 +23,7 @@ public:
     int check = -1;
     for(unsigned int i = 0; i<=chain.size(); ++i){
       if(m_buffer.empty())
-        throw "stack is empty at " + std::to_string(m_curr_state) + " pos";
+        throw "wrong symbol "+ chain.substr(i-1,1) +" at pos " + std::to_string(i) + ".\nUnexpected symbol afer end of the chain";
       string top = m_buffer.top();
       m_buffer.pop();
       check = this->change_state(top,chain.substr(i,1), i);
