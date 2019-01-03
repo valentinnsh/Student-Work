@@ -23,7 +23,8 @@ public:
     int check = -1;
     for(unsigned int i = 0; i<=chain.size(); ++i){
       if(m_buffer.empty())
-        throw "wrong symbol "+ chain.substr(i-1,1) +" at pos " + std::to_string(i) + ".\nUnexpected symbol afer end of the chain";
+        throw "wrong symbol "+ chain.substr(i-1,1) +" at pos " +
+          std::to_string(i-1) + ".\nUnexpected symbol after the  end of the accepttable chain";
       string top = m_buffer.top();
       m_buffer.pop();
       check = this->change_state(top,chain.substr(i,1), i);
@@ -146,6 +147,8 @@ public:
           //(q_4,a,A)
           m_curr_state = 4;
           return 4;
+        }else if(symb == ""){
+          throw "Expexted a, but found end of the chain at pos " + std::to_string(pos); 
         }else throw "character " + symb + " at pos " + std::to_string(pos) + " is not allowed.\nExpected a\n";
       }
     }

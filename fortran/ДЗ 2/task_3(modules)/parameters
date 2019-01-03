@@ -1,0 +1,2 @@
+real(mp) :: p, q
+common / param / p, q
